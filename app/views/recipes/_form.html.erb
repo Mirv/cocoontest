@@ -1,4 +1,4 @@
-<%= form_for(@recipe) do |f| %>
+<%= form_for @recipe, html: {class: "form-horizontal"} do |f| %>
   <% if @recipe.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
@@ -11,19 +11,31 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :instruction %><br>
-    <%= f.text_area :instruction %>
-  </div>
-  <div class="actions">
+  <fieldset id="recipe-meta">
+    <ol>
+      <li class="control-group">
+        <%= f.label :title, "Recipe Name", class: "control-label" %>
+        <div class="controls"><%= f.text_field :title %></div>
+      </li>
+      <li class="control-group">
+        <%= f.label :description, "A brief description of this recipe", class: "control-label" %>
+        <div class="controls"><%= f.text_area :description, rows: 5 %></div>
+      </li>
+      <li class="control-group">
+        <%= f.label :instructions, "Instructions for this recipe", class: "control-label" %>
+        <div class="controls"><%= f.text_area :instructions, rows: 10 %></div>
+      </li>
+    </ol>
+  </fieldset>
+
+  <fieldset id="recipe-ingredients">
+    <ol>
+      <%= f.fields_for :quantities do |quantity| %>
+        <%= render 'quantity_fields', f: quantity %>
+      <% end %>
+    </ol>
+    <%= link_to_add_association 'add ingredient', f, :quantities, 'data-association-insertion-node' => "#recipe-ingredients ol", 'data-association-insertion-method' => "append", :wrap_object => Proc.new {|quantity| quantity.build_ingredient; quantity } %>
+  </fieldset>
     <%= f.submit %>
   </div>
 <% end %>
