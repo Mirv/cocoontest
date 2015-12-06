@@ -10,6 +10,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1
   # GET /recipes/1.json
   def show
+    @recipe = set_recipe
   end
 
   # GET /recipes/new
@@ -69,6 +70,7 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:title, :description, :instruction)
+      #seems to work, but can't show nested yet ... params.require(:recipe).permit(:title, :description, :instruction)
+      params.require(:recipe).permit(:title, :description, :instruction, recipe_attributes: [:title, :description, :_destroy])
     end
 end

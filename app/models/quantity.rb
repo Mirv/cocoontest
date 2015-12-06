@@ -1,7 +1,4 @@
 class Quantity < ActiveRecord::Base
-  attr_accessible :amount,
-                  :ingredient,
-                  :ingredient_attributes
 
   belongs_to :recipe
   belongs_to :ingredient
