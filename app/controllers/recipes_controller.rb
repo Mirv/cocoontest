@@ -72,9 +72,10 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      #seems to work, but can't show nested yet ... params.require(:recipe).permit(:title, :description, :instruction)
+      #seems to work, but used wrong pluralization for quantity, should have been quantities_attributes
       params.require(:recipe).permit(:title, :description, :instruction, 
+      quantities_attributes: [:id, :amount, :ingredient, :_destroy],
       recipe_attributes: [:title, :description, :_destroy],
-      ingredient_attributes: [:id, :name, :_destroy])
+      ingredients_attributes: [:id, :name, :_destroy])
     end
 end
