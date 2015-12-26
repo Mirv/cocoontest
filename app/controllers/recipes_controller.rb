@@ -74,8 +74,6 @@ class RecipesController < ApplicationController
     def recipe_params
       #seems to work, but used wrong pluralization for quantity, should have been quantities_attributes
       params.require(:recipe).permit(:title, :description, :instruction, 
-      :quantities_attributes => [:id, :ingredient, :ingredient_id, :recipe_id, :amount, :_destroy], 
-      :ingredient_attributes => [:id, :_destroy, :ingredient_id, :name], 
-      :ingredients_attributes => [:id, :_destroy, :ingredient_id, :name])
+      :quantities_attributes => [:id, :ingredient, :ingredient_id, :recipe_id, :amount, :_destroy, :ingredient_attributes => [:id, :_destroy, :ingredient_id, :name]])
     end
 end
