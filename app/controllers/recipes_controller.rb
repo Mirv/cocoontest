@@ -13,10 +13,8 @@ class RecipesController < ApplicationController
   # GET /recipes/1.json
   def show
     @recipe = Recipe.find(params[:id])
+    #adding nested model call to use for quantity to call ingredients
     @quantity = @recipe.quantities
-    #@ingredient = @quantity.ingredients)
-    # Possibly too long of chain
-    #@ingredient = @quantity.find(params[:quantities_attributes][:ingredient_attributes][ingredient_id])
   end
 
   # GET /recipes/new
