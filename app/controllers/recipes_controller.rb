@@ -5,13 +5,18 @@ class RecipesController < ApplicationController
   # GET /recipes.json
   def index
     @recipes = Recipe.all
+    #var to represent the forgein model
+    #@quantity = @recipes.
   end
 
   # GET /recipes/1
   # GET /recipes/1.json
   def show
     @recipe = Recipe.find(params[:id])
-
+    @quantity = @recipe.quantities
+    #@ingredient = @quantity.ingredients)
+    # Possibly too long of chain
+    #@ingredient = @quantity.find(params[:quantities_attributes][:ingredient_attributes][ingredient_id])
   end
 
   # GET /recipes/new
