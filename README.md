@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
      ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
     '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
@@ -22,3 +23,7 @@ The Cloud9 IDE team
 
 Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
 To watch some training videos, visit http://www.youtube.com/user/c9ide
+=======
+# cocoontest
+Ruby on Rails v4 - with [Cocoon](https://github.com/nathanvda/cocoon) full demo done in Rail's *.ERB files per [Hack Hand](https://hackhands.com/building-has_many-model-relationship-form-cocoon/)'s outdated files
+>>>>>>> 4d34743c7e69255ea4174ad377e804f8cd740e39
