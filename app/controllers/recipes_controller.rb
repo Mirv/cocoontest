@@ -11,12 +11,8 @@ class RecipesController < ApplicationController
   # GET /recipes/1.json
   def show
     @recipe = Recipe.find(params[:id])
-<<<<<<< HEAD
     #adding nested model call to use for quantity to call ingredients
     @quantity = @recipe.quantities
-=======
-
->>>>>>> parent of 51c604e... Updated the show page
   end
 
   # GET /recipes/new

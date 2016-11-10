@@ -19,3 +19,5 @@
 # Ignore tokens
 config/secrets.yml
 config/initializers/secret_token.rb
+
+Gemfile.lock
