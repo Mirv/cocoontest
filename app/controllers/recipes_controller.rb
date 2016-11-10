@@ -5,16 +5,18 @@ class RecipesController < ApplicationController
   # GET /recipes.json
   def index
     @recipes = Recipe.all
-    #var to represent the forgein model
-    #@quantity = @recipes.
   end
 
   # GET /recipes/1
   # GET /recipes/1.json
   def show
     @recipe = Recipe.find(params[:id])
+<<<<<<< HEAD
     #adding nested model call to use for quantity to call ingredients
     @quantity = @recipe.quantities
+=======
+
+>>>>>>> parent of 51c604e... Updated the show page
   end
 
   # GET /recipes/new

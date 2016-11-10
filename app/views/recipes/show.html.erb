@@ -14,19 +14,6 @@
   <strong>Instruction:</strong>
   <%= @recipe.instruction %>
 </p>
-<p>
-  <strong>New:</strong>
-    <ul>
-      <% @quantity.each do |quantity| %>
-        <li>
-        <%= quantity.amount %> 
-        <%= quantity.ingredient.name %>
-        </li>
-      <% end %>
-    </ul>
-    
-</p>
-
 
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
